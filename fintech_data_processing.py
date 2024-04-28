@@ -40,10 +40,12 @@ conn = psycopg2.connect(
 conn.autocommit = True
 cursor = conn.cursor()
 
-# Create schema and table
-cursor.execute("""
-CREATE SCHEMA IF NOT EXISTS fintech_schema;
+# Create schema if it does not exist
+cursor.execute("CREATE SCHEMA IF NOT EXISTS fintech_schema;")
+conn.commit()  # Ensure the schema creation is committed
 
+# Create table within the schema
+cursor.execute("""
 CREATE TABLE IF NOT EXISTS fintech_schema.fintech (
     No INTEGER,
     Company_name VARCHAR(255),
@@ -61,7 +63,7 @@ CREATE TABLE IF NOT EXISTS fintech_schema.fintech (
 # Copy data from S3 to Redshift
 copy_sql = f"""
 COPY fintech_schema.fintech
-FROM 's3://{S3_BUCKET}/Fintech_Unicorn_2021.csv'
+FROM 's3://{S3_BUCKET}/Fintech Unicorn 2021.csv'
 CREDENTIALS 'aws_iam_role={IAM_ROLE_ARN}'
 FORMAT AS CSV
 IGNOREHEADER 1
