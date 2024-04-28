@@ -22,3 +22,14 @@ This project involves extracting Fintech data, loading it into Amazon Redshift, 
 3. Install required Python packages:
    ```bash
    pip install pandas boto3 psycopg2-binary python-dotenv
+
+REDSHIFT_DATABASE=<your_redshift_database>
+REDSHIFT_USER=<your_redshift_user>
+REDSHIFT_PASSWORD=<your_redshift_password>
+REDSHIFT_HOST=<your_redshift_host>
+REDSHIFT_PORT=<your_redshift_port>
+AWS_ACCESS_KEY_ID=<your_aws_access_key>
+AWS_SECRET_ACCESS_KEY=<your_aws_secret_key>
+AWS_REGION=<your_aws_region>
+S3_BUCKET=<your_s3_bucket_name>
+IAM_ROLE_ARN=<your_iam_role_arn>
