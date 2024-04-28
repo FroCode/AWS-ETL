@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 
 # Load environment variables
-load_dotenv('.env')
+load_dotenv('./.env')
 
 # Database and AWS credentials
 DATABASE = os.getenv('REDSHIFT_DATABASE')
