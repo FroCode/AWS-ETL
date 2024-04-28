@@ -23,3 +23,8 @@ This project involves extracting Fintech data, loading it into Amazon Redshift, 
    ```bash
    pip install pandas boto3 psycopg2-binary python-dotenv
 
+### Current Work
+The data upload and initial processing are functioning correctly. However, there are still tasks under development:
+
+1. Data Analysis: Detailed analysis of the data is in the planning stages.
+2. Dashboard Development: A Power BI dashboard is currently under development to visualize and interact with the dataset.
