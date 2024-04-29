@@ -12,6 +12,7 @@ This project involves extracting Fintech data, loading it into Amazon Redshift, 
 ### Prerequisites
 - Python 3.x
 - AWS Account
+- VPC
 - Amazon Redshift Cluster
 - Amazon S3 Bucket
 - Power BI Desktop for visualization (Upcoming)
