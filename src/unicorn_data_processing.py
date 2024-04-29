@@ -1,4 +1,3 @@
-import pandas as pd
 import boto3
 import psycopg2
 import os
@@ -26,9 +25,6 @@ session = boto3.Session(
     region_name=REGION_NAME
 )
 
-# S3 resource
-s3 = session.resource('s3')
-
 # Connect to Redshift
 conn = psycopg2.connect(
     dbname=DATABASE,
@@ -40,40 +36,29 @@ conn = psycopg2.connect(
 conn.autocommit = True
 cursor = conn.cursor()
 
-# Create schema if it does not exist
-cursor.execute("CREATE SCHEMA IF NOT EXISTS fintech_schema;")
-conn.commit()  # Ensure the schema creation is committed
-
-# Create table within the schema
+# Create schema and table
+cursor.execute("CREATE SCHEMA IF NOT EXISTS unitech_schema;")
 cursor.execute("""
-CREATE TABLE IF NOT EXISTS fintech_schema.fintech (
+CREATE TABLE IF NOT EXISTS unitech_schema.unitech (
     No INTEGER,
-    Company_name VARCHAR(255),
-    Valuation_inB_D DECIMAL(10,2),
+    Company VARCHAR(255),
+    Valuation_inB DECIMAL(10,2),
     Date_joined DATE,
     Year INTEGER,
     Country VARCHAR(100),
     City VARCHAR(100),
     Industry VARCHAR(255),
     Type VARCHAR(100),
-    Investor VARCHAR(500)
+    Description TEXT,
+    Website VARCHAR(255),
+    Investor TEXT
 );
 """)
 
 # Copy data from S3 to Redshift
-copy_sql = f"""
-COPY fintech_schema.fintech
-FROM 's3://{S3_BUCKET}/Fintech Unicorn 2021.csv'
-CREDENTIALS 'aws_iam_role={IAM_ROLE_ARN}'
-FORMAT AS CSV
-IGNOREHEADER 1
-TIMEFORMAT 'auto'
-DATEFORMAT 'auto'
-BLANKSASNULL
-EMPTYASNULL
-MAXERROR 10;
-"""
-cursor.execute(copy_sql)
+cursor.execute(f"""COPY dev.public.unicorn (no, company, "company.1", "valuation ($b)", "date joined", year, country, city, industry, investor) FROM 's3://loadingdatafintech/Unicorn 2012-2021.csv' IAM_ROLE 'arn:aws:iam::905418126921:role/ReadshiftLoadRole' FORMAT AS CSV DELIMITER ',' QUOTE '"' IGNOREHEADER 1 REGION AS 'eu-central-1'
+
+""")
 
 cursor.close()
 conn.close()
