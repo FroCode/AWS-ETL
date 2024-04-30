@@ -9,9 +9,10 @@ This project involves extracting Fintech data, loading it into Amazon Redshift, 
 - `README.md`: Provides project documentation.
 
 ## Setup Instructions
-### Prerequisites
-- Python 3.x
-- AWS Account
+### Aws Services And Tools
+- AWS CLI
+- Boto3
+- IAM
 - VPC
 - Amazon Redshift Cluster
 - Amazon S3 Bucket
