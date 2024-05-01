@@ -16,6 +16,7 @@ This project involves extracting Fintech data, loading it into Amazon Redshift, 
 - VPC
 - Amazon Redshift Cluster
 - Amazon S3 Bucket
+- Lambda 
 - Power BI for visualization (Upcoming)
 
 ### Environment Setup
