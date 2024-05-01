@@ -37,6 +37,7 @@ s3 = session.resource('s3')
 
 # Specify the bucket and object
 bucket_name = S3_BUCKET  # Use the S3 bucket name from your .env
+
 object_key = 'Unicorn 2012-2021.csv'  # Ensure this is the correct file name
 
 # Get the object from the bucket

@@ -56,8 +56,11 @@ CREATE TABLE IF NOT EXISTS unitech_schema.unitech (
 """)
 
 # Copy data from S3 to Redshift
-cursor.execute(f"""COPY dev.public.unicorn (no, company, "company.1", "valuation ($b)", "date joined", year, country, city, industry, investor) FROM 's3://loadingdatafintech/Unicorn 2012-2021.csv' IAM_ROLE 'arn:aws:iam::905418126921:role/ReadshiftLoadRole' FORMAT AS CSV DELIMITER ',' QUOTE '"' IGNOREHEADER 1 REGION AS 'eu-central-1'
-
+cursor.execute(f"""
+COPY dev.public.unicorn (no, company, "company.1", "valuation ($b)", "date joined", year, country, city, industry, investor)
+FROM 's3://loadingdatafintech/Unicorn 2012-2021.csv' 
+IAM_ROLE 'arn:aws:iam::905418126921:role/ReadshiftLoadRole' 
+FORMAT AS CSV DELIMITER ',' QUOTE '"' IGNOREHEADER 1 REGION AS 'eu-central-1'
 """)
 
 cursor.close()
