@@ -9,14 +9,14 @@ This project involves extracting Fintech data, loading it into Amazon Redshift, 
 - `README.md`: Provides project documentation.
 
 ## Setup Instructions
-### Aws Services And Tools
+### AWS Services And Tools
 - AWS CLI
 - Boto3
 - IAM
 - VPC
 - Amazon Redshift Cluster
 - Amazon S3 Bucket
-- Power BI Desktop for visualization (Upcoming)
+- Power BI for visualization (Upcoming)
 
 ### Environment Setup
 1. Clone the repository to your local machine.
