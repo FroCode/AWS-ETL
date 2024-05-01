@@ -32,4 +32,5 @@ The data upload and initial processing are functioning correctly. However, there
 1. Data Analysis: Detailed analysis of the data is in the planning stages.
 2. Lambda function for Increamental Load
 3. Extracting data from PostgreSQL
+4. Automation: For regular and scheduled transformations, automation and workflow tools like AWS Data Pipeline or AWS Lambda to executeSQL scripts. 
 4. Dashboard Development: A Power BI dashboard is currently under development to visualize and interact with the dataset.
