@@ -1,7 +1,7 @@
 # Fintech Data Processing and Analysis
 
 ## Overview
-This project involves extracting Fintech data, loading it into Amazon Redshift, and preparing for further analysis and visualization in Power BI. The data is processed using a Python script that uploads the data to an S3 bucket and then loads it into a Redshift database.
+This project involves extracting Fintech data from MySQL Database, loading it into Amazon Redshift, and preparing for further analysis and visualization in Power BI. The data is processed using a Python script that uploads the data to an S3 bucket and then loads it into a Redshift database.
 ![image](https://github.com/FroCode/AWS-ETL/blob/main/im.png)
 ## Project Structure
 - `unicorn_data_loading_redshift.py`: This script handles the connection to AWS services (S3 and Redshift), creates necessary database schema and tables, and performs data loading operations.
@@ -31,4 +31,5 @@ The data upload and initial processing are functioning correctly. However, there
 
 1. Data Analysis: Detailed analysis of the data is in the planning stages.
 2. Lambda function for Increamental Load
-3. Dashboard Development: A Power BI dashboard is currently under development to visualize and interact with the dataset.
+3. Extracting data from PostgreSQL
+4. Dashboard Development: A Power BI dashboard is currently under development to visualize and interact with the dataset.
