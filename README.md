@@ -2,7 +2,7 @@
 
 ## Overview
 This project involves extracting Fintech data, loading it into Amazon Redshift, and preparing for further analysis and visualization in Power BI. The data is processed using a Python script that uploads the data to an S3 bucket and then loads it into a Redshift database.
-![image](https://github.com/FroCode/AWS-ETL/blob/main/bg_1.png)
+![image](https://github.com/FroCode/AWS-ETL/blob/main/im.png)
 ## Project Structure
 - `fintech_data_processing.py`: This script handles the connection to AWS services (S3 and Redshift), creates necessary database schema and tables, and performs data loading operations.
 - `.env`: A dotenv file to store sensitive credentials like AWS access keys, Redshift database credentials, etc. (Note: This file should not be checked into version control).
