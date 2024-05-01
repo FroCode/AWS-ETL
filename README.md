@@ -33,6 +33,6 @@ The data upload and initial processing are functioning correctly. However, there
 1. Data Analysis: Detailed analysis of the data is in the planning stages.
 2. Lambda function for Increamental Load
 3. Extracting data from different sources like : PostgreSQL
-4. Automation: For regular and scheduled transformations, automation and workflow tools like AWS Lambda to execute SQL scripts. 
+4. Automation: For regular and scheduled transformations execute SQL scripts. 
 5. Regular Backups: Configure and ensure regular backups of Redshift cluster to safeguard against data loss.
 6. Dashboard Development: A Power BI dashboard is currently under development to visualize and interact with the dataset.
