@@ -55,7 +55,7 @@ cursor = conn.cursor()
 # );
 # """)
 
-# Copy data from S3 to Redshift
+# Copy data from S3 to Redshift d
 cursor.execute(f"""
 COPY dev.public.fintech (no, company, "company.1", "valuation ($b)", "date_joined",  country, city, industry, investor , year)
 FROM 's3://loadingdatafintech/Fintech Unicorn 2021.csv' 
