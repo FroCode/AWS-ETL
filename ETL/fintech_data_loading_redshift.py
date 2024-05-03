@@ -37,29 +37,28 @@ conn.autocommit = True
 cursor = conn.cursor()
 
 # Create schema and table
-# cursor.execute("CREATE SCHEMA IF NOT EXISTS unitech_schema;")
-# cursor.execute("""
-# CREATE TABLE IF NOT EXISTS unitech_schema.unitech (
-#     No INTEGER,
-#     Company VARCHAR(255),
-#     Valuation_inB DECIMAL(10,2),
-#     Date_joined DATE,
-#     Year INTEGER,
-#     Country VARCHAR(100),
-#     City VARCHAR(100),
-#     Industry VARCHAR(255),
-#     Type VARCHAR(100),
-#     Description TEXT,
-#     Website VARCHAR(255),
-#     Investor TEXT
-# );
-# """)
+
+cursor.execute("CREATE SCHEMA IF NOT EXISTS fintech;")
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS fintech (
+    No INTEGER,
+    Company VARCHAR(255),
+    Valuation_inB DECIMAL(10,2),
+    Date_joined VARCHAR(255),
+    Year VARCHAR(255),
+    Country VARCHAR(100),
+    City VARCHAR(100),
+    Industry VARCHAR(255),
+    Type VARCHAR(100),
+    Description VARCHAR(MAX),
+    Website TEXT,
+    Investor TEXT
+);
+""")
 
 # Copy data from S3 to Redshift
 cursor.execute(f"""
-COPY dev.public.fintech (no, company, "company.1", "valuation ($b)", "date_joined",  country, city, industry, investor , year)
-FROM 's3://loadingdatafintech/Fintech Unicorn 2021.csv' 
-IAM_ROLE 'arn:aws:iam::905418126921:role/ReadshiftLoadRole' 
+COPY dev.public.fintech FROM 's3://loadingdatafintech/Fintech Unicorn 2021.csv' IAM_ROLE 'arn:aws:iam::905418126921:role/ReadshiftLoadRole'
 FORMAT AS CSV DELIMITER ',' QUOTE '"' IGNOREHEADER 1 REGION AS 'eu-central-1'
 """)
 
