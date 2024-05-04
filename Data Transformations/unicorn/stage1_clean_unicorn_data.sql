@@ -1,4 +1,5 @@
 SELECT * FROM dev.public.unicorn;
+SELECT * FROM dev.public.fintech;
 ALTER TABLE dev.public.unicorn
 -----------------------------------------------------------------------------
 DROP COLUMN "company.1";
