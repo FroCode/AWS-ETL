@@ -1,4 +1,4 @@
-SELECT Industry, AVG(CAST(valuation_inbAS NUMERIC)) AS Average_Valuation
-FROM dev.public.fintech
+SELECT Industry, AVG(CAST(valuation_inb AS NUMERIC)) AS Average_Valuation
+FROM dev.public.unicorn
 GROUP BY Industry
 ORDER BY Average_Valuation DESC;
