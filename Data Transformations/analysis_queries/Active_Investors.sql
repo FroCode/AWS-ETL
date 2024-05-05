@@ -7,7 +7,7 @@ WITH RECURSIVE split_investors (no, company, investor, rest) AS (
       WHEN POSITION(',' IN investor) > 0 THEN SUBSTRING(investor, POSITION(',' IN investor) + 1)
       ELSE NULL
     END AS rest
-  FROM dev.public.fintech
+  FROM dev.public.unicorn
   UNION ALL
   SELECT
     no,
@@ -20,7 +20,9 @@ WITH RECURSIVE split_investors (no, company, investor, rest) AS (
   FROM split_investors
   WHERE rest IS NOT NULL
 )
-SELECT investor, COUNT(DISTINCT company) AS investment_count
+
+SELECT LTRIM(investor), COUNT(DISTINCT company) AS investment_count
 FROM split_investors
 GROUP BY investor
 ORDER BY investment_count DESC;
+
