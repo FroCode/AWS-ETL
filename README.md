@@ -3,6 +3,8 @@
 ## Overview
 This project involves extracting Fintech data from MySQL Database, loading it into Amazon Redshift, and preparing for further analysis and visualization in Power BI. The data is processed using a Python script that uploads the data to an S3 bucket and then loads it into a Redshift database.
 ## 
+## Live preview 
+## View in Power Bi [Click Here](https://app.powerbi.com/groups/me/reports/e69eac26-39f3-432e-ba1f-dcc801b32a8a/ReportSection?experience=power-bi)
 ![image](https://github.com/FroCode/AWS-ETL/blob/main/im.png)
 ![image](https://github.com/FroCode/AWS-ETL/blob/main/screen.png)
 ## Project Structure
