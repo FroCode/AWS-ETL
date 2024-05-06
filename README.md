@@ -5,6 +5,7 @@ This project involves extracting Fintech data from MySQL Database, loading it in
 ## 
 ![image](https://github.com/FroCode/AWS-ETL/blob/main/im.png)
 ![image](https://github.com/FroCode/AWS-ETL/blob/main/im.png)
+![image](https://github.com/FroCode/AWS-ETL/blob/main/Capture%20d'%C3%A9cran%202024-05-06%20234620.png)
 ## Project Structure
 - `unicorn_data_loading_redshift.py`: This script handles the connection to AWS services (S3 and Redshift), creates necessary database schema and tables, and performs data loading operations.
 - `.env`: A dotenv file to store sensitive credentials like AWS access keys, Redshift database credentials, etc. (Note: This file should not be checked into version control).
