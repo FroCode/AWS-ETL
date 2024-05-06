@@ -38,5 +38,5 @@ The data upload and initial processing are functioning correctly. However, there
 5. Regular Backups: Configure and ensure regular backups of Redshift cluster to safeguard against data loss.
 6. Dashboard Development: A Power BI dashboard is currently under development to visualize and interact with the dataset.
 
-### View in Power Bi [Click Here](https://app.powerbi.com/groups/me/reports/e69eac26-39f3-432e-ba1f-dcc801b32a8a/ReportSection?experience=power-bi)
-### Live preview [Click Here](https://frocode.github.io/AWS-ETL/) 
+#### View in Power Bi [Click Here](https://app.powerbi.com/groups/me/reports/e69eac26-39f3-432e-ba1f-dcc801b32a8a/ReportSection?experience=power-bi)
+#### Live preview [Click Here](https://frocode.github.io/AWS-ETL/) 
